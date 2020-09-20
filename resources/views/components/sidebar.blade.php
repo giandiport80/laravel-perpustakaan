@@ -14,7 +14,7 @@
             <ul class="nav sidebar-inner" id="sidebar-menu">
 
                 <li class="has-sub active">
-                    <a class="sidenav-item-link" href="javascript:void(0)">
+                    <a class="sidenav-item-link" href="{{ route('dashboard.index') }}">
                         <i class="mdi mdi-image-filter-none"></i>
                         <span class="nav-text">Dashboard</span>
                     </a>
@@ -24,14 +24,14 @@
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
                         data-target="#dashboard" aria-expanded="false" aria-controls="dashboard">
                         <i class="mdi mdi-view-dashboard-outline"></i>
-                        <span class="nav-text">Dashboard</span> <b class="caret"></b>
+                        <span class="nav-text">Master Data</span> <b class="caret"></b>
                     </a>
                     <ul class="collapse" id="dashboard" data-parent="#sidebar-menu">
                         <div class="sub-menu">
 
                             <li class="active">
-                                <a class="sidenav-item-link" href="index.html">
-                                    <span class="nav-text">Ecommerce</span>
+                                <a class="sidenav-item-link" href="{{ route('kategori.index') }}">
+                                    <span class="nav-text">Kategori</span>
 
                                 </a>
                             </li>

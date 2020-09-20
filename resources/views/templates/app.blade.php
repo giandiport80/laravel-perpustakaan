@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Libarary 7</title>
+    <title>@yield('title', 'Library 7')</title>
 
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500"
@@ -21,11 +21,11 @@
     <link href="{{ asset('admin') }}/assets/plugins/ladda/ladda.min.css" rel="stylesheet" />
     <link href="{{ asset('admin') }}/assets/plugins/select2/css/select2.min.css" rel="stylesheet" />
     <link href="{{ asset('admin') }}/assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
-
+    
     <!-- SLEEK CSS -->
     <link id="sleek-css" rel="stylesheet" href="{{ asset('admin') }}/assets/css/sleek.css" />
 
-
+    @stack('css')
 
     <!-- FAVICON -->
     {{-- <link href="assets/img/favicon.png" rel="shortcut icon" /> --}}
@@ -99,6 +99,7 @@
     <script src="{{ asset('admin') }}/assets/js/date-range.js"></script>
     <script src="{{ asset('admin') }}/assets/js/map.js"></script>
     <script src="{{ asset('admin') }}/assets/js/custom.js"></script>
+    @stack('scripts')
 
 
 
