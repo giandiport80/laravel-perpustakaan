@@ -76,7 +76,8 @@
                     <ul class="dropdown-menu dropdown-menu-right">
                         <!-- User image -->
                         <li class="dropdown-header">
-                            <img src="assets/img/user/user.png" class="img-circle" alt="User Image" />
+                            <img src="{{ asset('admin') }}/assets/img/user/user.png" class="img-circle"
+                                alt="User Image" />
                             <div class="d-inline-block">
                                 Abdus Salam <small class="pt-1">abdus@gmail.com</small>
                             </div>
@@ -87,20 +88,15 @@
                                 <i class="mdi mdi-account"></i> My Profile
                             </a>
                         </li>
-                        <li>
-                            <a href="email-inbox.html">
-                                <i class="mdi mdi-email"></i> Message
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#"> <i class="mdi mdi-diamond-stone"></i> Projects </a>
-                        </li>
-                        <li>
-                            <a href="#"> <i class="mdi mdi-settings"></i> Account Setting </a>
-                        </li>
 
                         <li class="dropdown-footer">
-                            <a href="signin.html"> <i class="mdi mdi-logout"></i> Log Out </a>
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                <i class="mdi mdi-logout"></i>{{ __('Logout') }}</a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </li>
                     </ul>
                 </li>

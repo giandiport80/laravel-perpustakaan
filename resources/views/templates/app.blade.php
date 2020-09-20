@@ -30,14 +30,6 @@
     <!-- FAVICON -->
     {{-- <link href="assets/img/favicon.png" rel="shortcut icon" /> --}}
 
-    <!--
-    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
-  -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
     <script src="{{ asset('admin') }}/assets/plugins/nprogress/nprogress.js"></script>
 </head>
 
@@ -52,14 +44,7 @@
 
     <div class="wrapper">
 
-        <!--
-          ====================================
-          ——— LEFT SIDEBAR WITH FOOTER
-          =====================================
-        -->
         <x-sidebar />
-
-
 
         <div class="page-wrapper">
             <!-- Header -->
@@ -69,60 +54,7 @@
             <div class="content-wrapper">
                 <div class="content">
 
-                    <div class="card card-default">
-                        <div class="card-header card-header-border-bottom">
-                            <h2>Dashboard</h2>
-                        </div>
-                        <div class="card-body">
-                            <!-- Top Statistics -->
-                            <div class="row">
-                                <div class="col-xl-3 col-sm-6">
-                                    <div class="card card-mini mb-4">
-                                        <div class="card-body">
-                                            <h2 class="mb-1">71,503</h2>
-                                            <p>Online Signups</p>
-                                            <div class="chartjs-wrapper">
-                                                <canvas id="barChart"></canvas>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-sm-6">
-                                    <div class="card card-mini  mb-4">
-                                        <div class="card-body">
-                                            <h2 class="mb-1">9,503</h2>
-                                            <p>New Visitors Today</p>
-                                            <div class="chartjs-wrapper">
-                                                <canvas id="dual-line"></canvas>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-sm-6">
-                                    <div class="card card-mini mb-4">
-                                        <div class="card-body">
-                                            <h2 class="mb-1">71,503</h2>
-                                            <p>Monthly Total Order</p>
-                                            <div class="chartjs-wrapper">
-                                                <canvas id="area-chart"></canvas>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-sm-6">
-                                    <div class="card card-mini mb-4">
-                                        <div class="card-body">
-                                            <h2 class="mb-1">9,503</h2>
-                                            <p>Total Revenue This Year</p>
-                                            <div class="chartjs-wrapper">
-                                                <canvas id="line"></canvas>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @yield('content')
 
                 </div>
 
