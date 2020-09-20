@@ -14,7 +14,7 @@
             <ul class="nav sidebar-inner" id="sidebar-menu">
 
                 <li class="has-sub active">
-                    <a class="sidenav-item-link" href="{{ route('dashboard.index') }}">
+                    <a class="sidenav-item-link" href="{{ route('home') }}">
                         <i class="mdi mdi-image-filter-none"></i>
                         <span class="nav-text">Dashboard</span>
                     </a>

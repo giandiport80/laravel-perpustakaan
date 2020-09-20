@@ -7,13 +7,14 @@
         <h2>Data Kategori</h2>
     </div>
     <div class="card-body">
-        <a href="" class="btn btn-primary btn-sm font-weigth-bold mb-3" title="tambah kategori">+ Kategori</a>
+        <x-alert-success />
+        <a href="{{ route('kategori.create') }}" class="btn btn-primary btn-sm font-weigth-bold mb-3"
+            title="tambah kategori">+ Kategori</a>
         <table class="table table-bordered">
             <thead class="text-center">
                 <tr>
                     <th>No</th>
                     <th>Kategori</th>
-                    <th>Dibuat</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -22,17 +23,23 @@
                 <tr>
                     <td class="text-center">{{ $loop->iteration }}.</td>
                     <td>{{ $kategori->nama }}</td>
-                    <td>{{ $kategori->created_at->format('d F Y') }}</td>
                     <td>
-                        <a href="" class="btn btn-success btn-sm" title="ubah kategori">Ubah</a>
-                        <a href="" class="btn btn-danger btn-sm" title="hapus kategori">Hapus</a>
+                        <form action="{{ route('kategori.destroy', $kategori->slug) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+
+                            <a href="{{ route('kategori.edit', $kategori->slug) }}" class="btn btn-success btn-sm" title="ubah kategori">Ubah</a>
+                            <button type="submit" onclick="return confirm('Yakin Hapus?')" class="btn btn-danger btn-sm" title="hapus kategori">Hapus</button>
+                        </form>
                     </td>
                 </tr>
+                @empty
+                <tr>
+                    <td colspan="4" class="text-center">Tidak Ada data kategori</td>
+                </tr>
+                @endforelse
             </tbody>
-            @empty
-            data tidak ada
-            @endforelse
-        
+
         </table>
     </div>
 </div>
