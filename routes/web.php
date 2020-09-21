@@ -21,11 +21,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+
+    // k: kategori
     Route::get('kategori', 'KategoriController@index')->name('kategori.index');
     Route::get('kategori/create', 'KategoriController@create')->name('kategori.create');
     Route::post('kategori', 'KategoriController@store')->name('kategori.store');
     Route::delete('kategori/{kategori:slug}', 'KategoriController@destroy')->name('kategori.destroy');
     Route::get('kategori/{kategori:slug}/edit', 'KategoriController@edit')->name('kategori.edit');
     Route::patch('kategori/{kategori:slug}', 'KategoriController@update')->name('kategori.update');
-    Route::get('/home', 'HomeController@index')->name('home');
+
+    // k: buku
+    Route::resource('buku', 'BukuController', ['except' => 'show']);
 });

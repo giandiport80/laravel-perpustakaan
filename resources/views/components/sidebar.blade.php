@@ -32,7 +32,12 @@
                             <li class="active">
                                 <a class="sidenav-item-link" href="{{ route('kategori.index') }}">
                                     <span class="nav-text">Kategori</span>
+                                </a>
+                            </li>
 
+                            <li class="active">
+                                <a class="sidenav-item-link" href="{{ route('buku.index') }}">
+                                    <span class="nav-text">Buku</span>
                                 </a>
                             </li>
 

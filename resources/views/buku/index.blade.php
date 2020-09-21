@@ -1,34 +1,42 @@
 @extends('templates.app')
-@section('title', 'Data Kategori')
+@section('title', 'Data Buku')
 
 @section('content')
 <div class="card card-default">
     <div class="card-header card-header-border-bottom">
-        <h2>Data Kategori</h2>
+        <h2>Data Buku</h2>
     </div>
     <div class="card-body">
         <x-alert-success />
-        <a href="{{ route('kategori.create') }}" class="btn btn-primary btn-sm font-weigth-bold mb-3"
-            title="tambah kategori">+ Kategori</a>
+        <a href="{{ route('buku.create') }}" class="btn btn-primary btn-sm font-weigth-bold mb-3"
+            title="tambah kategori">+ Buku</a>
         <table class="table table-bordered">
             <thead class="text-center">
                 <tr>
                     <th>No</th>
-                    <th>Kategori</th>
+                    <th>Kategori buku</th>
+                    <th>Judul buku</th>
+                    <th>Keterangan</th>
+                    <th>Penulis</th>
+                    <th>Stok</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @forelse ($data_kategori as $kategori)
+                @forelse ($data_buku as $buku)
                 <tr>
                     <td class="text-center">{{ $loop->iteration }}.</td>
-                    <td>{{ $kategori->nama }}</td>
+                    <td>{{ $buku->kategori->nama }}</td>
+                    <td>{{ $buku->judul }}</td>
+                    <td>{{ $buku->keterangan }}</td>
+                    <td>{{ $buku->penulis }}</td>
+                    <td>{{ $buku->stok }}</td>
                     <td>
-                        <form action="{{ route('kategori.destroy', $kategori->slug) }}" method="POST">
+                        <form action="{{ route('buku.destroy', $buku->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
 
-                            <a href="{{ route('kategori.edit', $kategori->slug) }}" class="btn btn-success btn-sm"
+                            <a href="{{ route('buku.edit', $buku->id) }}" class="btn btn-success btn-sm"
                                 title="ubah kategori">
                                 <span class="mdi mdi-square-edit-outline"></span>
                             </a>
@@ -41,7 +49,7 @@
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="4" class="text-center">Tidak Ada data kategori</td>
+                    <td colspan="7" class="text-center">Tidak Ada data buku</td>
                 </tr>
                 @endforelse
             </tbody>
