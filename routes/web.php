@@ -33,4 +33,5 @@ Route::group(['middleware' => ['auth']], function () {
 
     // k: buku
     Route::resource('buku', 'BukuController', ['except' => 'show']);
+    Route::get('status/{buku}', 'BukuController@changeStatus')->name('buku.status');
 });

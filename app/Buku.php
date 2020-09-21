@@ -8,7 +8,7 @@ class Buku extends Model
 {
     protected $table = 'buku';
 
-    protected $fillable = ['kategori_id', 'judul', 'keterangan', 'penulis', 'stok'];
+    protected $fillable = ['kategori_id', 'judul', 'keterangan', 'penulis', 'stok', 'status'];
 
     protected $with = ['kategori'];
 

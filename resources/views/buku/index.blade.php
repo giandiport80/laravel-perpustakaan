@@ -28,7 +28,15 @@
                     <td class="text-center">{{ $loop->iteration }}.</td>
                     <td>{{ $buku->kategori->nama }}</td>
                     <td>{{ $buku->judul }}</td>
-                    <td>{{ $buku->keterangan }}</td>
+                    <td>
+                        @if($buku->status === 1)
+                        <a href="{{ route('buku.status', $buku->id) }}" class="badge badge-success"
+                            title="aktifkan">Aktif</a>
+                        @else
+                        <a href="{{ route('buku.status', $buku->id) }}" class="badge badge-danger"
+                            title="nonaktifkan">Tidak Aktif</a>
+                        @endif
+                    </td>
                     <td>{{ $buku->penulis }}</td>
                     <td>{{ $buku->stok }}</td>
                     <td>
