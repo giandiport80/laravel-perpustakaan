@@ -14,6 +14,7 @@
             <thead class="text-center">
                 <tr>
                     <th>No</th>
+                    <th>Pinjam</th>
                     <th>Kategori buku</th>
                     <th>Judul buku</th>
                     <th>Keterangan</th>
@@ -26,6 +27,7 @@
                 @forelse ($data_buku as $buku)
                 <tr>
                     <td class="text-center">{{ $loop->iteration }}.</td>
+                    <td><a href="{{ route('pinjam.store', $buku->id) }}" class="btn btn-primary btn-sm">Pinjam Buku</a></td>
                     <td>{{ $buku->kategori->nama }}</td>
                     <td>{{ $buku->judul }}</td>
                     <td>
