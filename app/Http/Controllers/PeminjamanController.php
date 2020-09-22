@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Auth;
 
 class PeminjamanController extends Controller
 {
+    public function index()
+    {
+        $data_peminjaman = Peminjaman::latest()->get();
+        return view('peminjaman.index', compact('data_peminjaman'));
+    }
+
     public function store(Buku $buku)
     {
         $cek_buku = Buku::where([

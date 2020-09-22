@@ -41,6 +41,12 @@
                                 </a>
                             </li>
 
+                            <li class="active">
+                                <a class="sidenav-item-link" href="{{ route('pinjam.index') }}">
+                                    <span class="nav-text">Peminjaman</span>
+                                </a>
+                            </li>
+
                         </div>
                     </ul>
                 </li>

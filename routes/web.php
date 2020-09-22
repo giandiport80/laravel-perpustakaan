@@ -36,6 +36,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('status/{buku}', 'BukuController@changeStatus')->name('buku.status');
     
     // k: peminjaman
+    Route::get('pinjam', 'PeminjamanController@index')->name('pinjam.index');
     Route::get('pinjam/{buku}', 'PeminjamanController@store')->name('pinjam.store');
 
 });

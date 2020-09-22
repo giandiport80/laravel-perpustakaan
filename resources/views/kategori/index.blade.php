@@ -10,7 +10,7 @@
         <x-alert />
         <a href="{{ route('kategori.create') }}" class="btn btn-primary btn-sm font-weigth-bold mb-3"
             title="tambah kategori">+ Kategori</a>
-        <table class="table table-bordered">
+        <table class="table table-bordered table-hover">
             <thead class="text-center">
                 <tr>
                     <th>No</th>
