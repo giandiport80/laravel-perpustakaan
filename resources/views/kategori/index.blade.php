@@ -7,7 +7,7 @@
         <h2>Data Kategori</h2>
     </div>
     <div class="card-body">
-        <x-alert-success />
+        <x-alert />
         <a href="{{ route('kategori.create') }}" class="btn btn-primary btn-sm font-weigth-bold mb-3"
             title="tambah kategori">+ Kategori</a>
         <table class="table table-bordered">

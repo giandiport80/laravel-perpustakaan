@@ -7,7 +7,7 @@
         <h2>Data Buku</h2>
     </div>
     <div class="card-body">
-        <x-alert-success />
+        <x-alert />
         <a href="{{ route('buku.create') }}" class="btn btn-primary btn-sm font-weigth-bold mb-3"
             title="tambah kategori">+ Buku</a>
         <table class="table table-bordered">
@@ -33,10 +33,10 @@
                     <td>
                         @if($buku->status === 1)
                         <a href="{{ route('buku.status', $buku->id) }}" class="badge badge-success"
-                            title="aktifkan">Aktif</a>
+                            title="nonaktifkan">Aktif</a>
                         @else
                         <a href="{{ route('buku.status', $buku->id) }}" class="badge badge-danger"
-                            title="nonaktifkan">Tidak Aktif</a>
+                            title="aktifkan">Tidak Aktif</a>
                         @endif
                     </td>
                     <td>{{ $buku->penulis }}</td>
