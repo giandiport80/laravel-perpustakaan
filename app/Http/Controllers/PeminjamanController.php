@@ -32,14 +32,28 @@ class PeminjamanController extends Controller
             $update_buku = Buku::findOrFail($buku->id);
             $update_buku->stok -= 1;
             $update_buku->save();
-    
-            session()->flash('success', 'Buku berhasil dipinjam!');
 
+            session()->flash('success', 'Buku berhasil dipinjam!');
         } else {
             session()->flash('error', 'Buku sudah habis atau tidak aktif!');
         }
-        
+
         return redirect()->route('buku.index');
+    }
+
+    public function changeStatus(Peminjaman $peminjaman)
+    {
+        if ($peminjaman->status == null) {
+            $peminjaman->update([
+                'status' => 1
+            ]);
+        } else {
+            $peminjaman->update([
+                'status' => null
+            ]);
+        }
+
+        return back();
     }
 }
 
