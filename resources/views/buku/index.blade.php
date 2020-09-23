@@ -32,10 +32,10 @@
                     <td>{{ $buku->judul }}</td>
                     <td>
                         @if($buku->status === 1)
-                        <a href="{{ route('pinjam.status', $buku->id) }}" class="badge badge-success"
+                        <a href="{{ route('buku.status', $buku->id) }}" class="badge badge-success"
                             title="nonaktifkan">Aktif</a>
                         @else
-                        <a href="{{ route('pinjam.status', $buku->id) }}" class="badge badge-danger"
+                        <a href="{{ route('buku.status', $buku->id) }}" class="badge badge-danger"
                             title="aktifkan">Tidak Aktif</a>
                         @endif
                     </td>

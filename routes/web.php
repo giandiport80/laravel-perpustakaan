@@ -30,15 +30,20 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('kategori/{kategori:slug}', 'KategoriController@destroy')->name('kategori.destroy');
     Route::get('kategori/{kategori:slug}/edit', 'KategoriController@edit')->name('kategori.edit');
     Route::patch('kategori/{kategori:slug}', 'KategoriController@update')->name('kategori.update');
-
+    
     // k: buku
     Route::resource('buku', 'BukuController', ['except' => 'show']);
-    Route::get('status/{buku}', 'BukuController@changeStatus')->name('buku.status');
-    
+    Route::get('status/{buku}', 'BukuController@bukuStatus')->name('buku.status');
+
     // k: peminjaman
     Route::get('pinjam', 'PeminjamanController@index')->name('pinjam.index');
     Route::get('pinjam/{buku}', 'PeminjamanController@store')->name('pinjam.store');
     Route::get('pinjam/{buku}', 'PeminjamanController@store')->name('pinjam.store');
     Route::get('status-buku/{peminjaman}', 'PeminjamanController@changeStatus')->name('pinjam.status');
+
+    // k: pengembalian
+    Route::get('pengembalian', 'PengembalianController@index')->name('pengembalian.index');
+    Route::get('pengembalian-buku/{peminjaman}', 'PengembalianController@pengembalian')->name('pengembalian.kembali');
+
 
 });

@@ -64,3 +64,12 @@ class PeminjamanController extends Controller
 // method count() menghasilkan nilai boolean
 
 // p: line 27: mengurangi stok buku setiap ada peminjaman
+
+
+
+
+// k: status
+// null = menunggu verifikasi
+// 0 = ditolak
+// 1 = disetujui
+// 2 = dikembalikan / sudah dipinjam

@@ -102,7 +102,7 @@ class BukuController extends Controller
         return redirect()->route('buku.index');
     }
 
-    public function changeStatus(Buku $buku)
+    public function bukuStatus(Buku $buku)
     {
         if ($buku->status == 1) {
             $buku->update([

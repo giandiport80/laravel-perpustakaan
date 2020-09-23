@@ -47,6 +47,12 @@
                                 </a>
                             </li>
 
+                            <li class="active">
+                                <a class="sidenav-item-link" href="{{ route('pengembalian.index') }}">
+                                    <span class="nav-text">Pengembalian</span>
+                                </a>
+                            </li>
+
                         </div>
                     </ul>
                 </li>

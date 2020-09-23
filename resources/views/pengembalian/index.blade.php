@@ -4,7 +4,7 @@
 @section('content')
 <div class="card card-default">
     <div class="card-header card-header-border-bottom">
-        <h2>Data Peminjaman Buku</h2>
+        <h2>Data Pengembalian Buku</h2>
     </div>
     <div class="card-body">
         <x-alert />
@@ -16,7 +16,8 @@
                     <th>Buku</th>
                     <th>Penulis</th>
                     <th>Status</th>
-                    <th>Tanggal dibuat</th>
+                    <th>Tanggal Pinjam</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,21 +28,19 @@
                     <td>{{ $peminjaman->buku->judul }}</td>
                     <td>{{ $peminjaman->buku->penulis }}</td>
                     <td>
-                        @if($peminjaman->status === null)
-                        <a href="{{ route('pinjam.status', $peminjaman->id) }}" class="badge badge-warning"
-                            title="Terima Persetujuan">Menunggu Verifikasi</a>
-                        @elseif($peminjaman->status === 1)
-                        <a href="{{ route('pinjam.status', $peminjaman->id) }}" class="badge badge-success"
-                            title="Batalkan persetujuan">Disetujui</a>
-                        @elseif($peminjaman->status === 2)
-                        <span class="badge badge-info"
-                            title="Batalkan persetujuan">Sudah Dipinjam</span>
+                        @if($peminjaman->status === 1)
+                        <span class="badge badge-info" title="Sedang dipinjam">Sedang dipinjam</span>
                         @else
-                        <a href="{{ route('pinjam.status', $peminjaman->id) }}" class="badge badge-danger"
-                            title="Terima persetujuan">Ditolak</a>
+                        <span class="badge badge-success" title="Sudah Dikembalikan">Sudah Dikembalikan</span>
                         @endif
                     </td>
                     <td>{{ $peminjaman->created_at->format('d F Y H:i') }}</td>
+                    @if($peminjaman->status === 1)
+                    <td><a href="{{ route('pengembalian.kembali', $peminjaman->id) }}"
+                            class="btn btn-sm btn-success">Kembalikan</a></td>
+                    @else
+                    <td></td>
+                    @endif
                 </tr>
                 @empty
                 <tr>
