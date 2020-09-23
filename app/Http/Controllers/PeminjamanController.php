@@ -30,7 +30,7 @@ class PeminjamanController extends Controller
             ]);
 
             $update_buku = Buku::findOrFail($buku->id);
-            $update_buku->stok -= 1;
+            $update_buku->stok--;
             $update_buku->save();
 
             session()->flash('success', 'Buku berhasil dipinjam!');

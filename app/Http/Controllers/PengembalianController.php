@@ -19,6 +19,11 @@ class PengembalianController extends Controller
             'status' => 2
         ]);
 
+        $stok = $peminjaman->buku->stok;
+        $peminjaman->buku->update([
+            'stok' => $stok + 1
+        ]);
+
         session()->flash('success', 'Buku berhasil dikembalikan');
 
         return redirect()->route('pengembalian.index');
