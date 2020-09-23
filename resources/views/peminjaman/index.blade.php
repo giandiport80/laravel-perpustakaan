@@ -28,12 +28,15 @@
                     <td>{{ $peminjaman->buku->judul }}</td>
                     <td>{{ $peminjaman->buku->penulis }}</td>
                     <td>
-                        @if($peminjaman->status == null)
-                        <a href="{{ route('pinjam.status', $peminjaman->id) }}" class="badge badge-danger"
-                            title="Terima Persetujuan">Belum Disetujui</a>
-                        @else
+                        @if($peminjaman->status === null)
+                        <a href="{{ route('pinjam.status', $peminjaman->id) }}" class="badge badge-warning"
+                            title="Terima Persetujuan">Menunggu Verifikasi</a>
+                        @elseif($peminjaman->status === 1)
                         <a href="{{ route('pinjam.status', $peminjaman->id) }}" class="badge badge-success"
                             title="Batalkan persetujuan">Disetujui</a>
+                        @else
+                        <a href="{{ route('pinjam.status', $peminjaman->id) }}" class="badge badge-danger"
+                            title="Terima persetujuan">Ditolak</a>
                         @endif
                     </td>
                     <td>{{ $peminjaman->created_at->format('d F Y H:i') }}</td>

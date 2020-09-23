@@ -49,7 +49,7 @@ class PeminjamanController extends Controller
             ]);
         } else {
             $peminjaman->update([
-                'status' => null
+                'status' => 0
             ]);
         }
 
