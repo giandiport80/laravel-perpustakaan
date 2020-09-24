@@ -29,11 +29,13 @@
                     <ul class="collapse show" id="dashboard" data-parent="#sidebar-menu">
                         <div class="sub-menu">
 
+                            @if(auth()->user()->role === 'admin')
                             <li @if(request()->is('kategori')) class="active" @endif>
                                 <a class="sidenav-item-link" href="{{ route('kategori.index') }}">
                                     <span class="nav-text">Kategori</span>
                                 </a>
                             </li>
+                            @endif
 
                             <li @if(request()->is('buku')) class="active" @endif>
                                 <a class="sidenav-item-link" href="{{ route('buku.index') }}">
@@ -47,17 +49,21 @@
                                 </a>
                             </li>
 
+                            @if(auth()->user()->role === 'admin')
                             <li @if(request()->is('pengembalian')) class="active" @endif>
                                 <a class="sidenav-item-link" href="{{ route('pengembalian.index') }}">
                                     <span class="nav-text">Pengembalian</span>
                                 </a>
                             </li>
+                            @endif
 
+                            @if(auth()->user()->role === 'admin')
                             <li @if(request()->is('anggota')) class="active" @endif>
                                 <a class="sidenav-item-link" href="{{ route('anggota.index') }}">
                                     <span class="nav-text">Anggota</span>
                                 </a>
                             </li>
+                            @endif
 
                         </div>
                     </ul>

@@ -27,6 +27,7 @@
                     <td>{{ $peminjaman->buku->judul }}</td>
                     <td>{{ $peminjaman->buku->penulis }}</td>
                     <td>
+                        @if(auth()->user()->role == 'admin')
                         @if($peminjaman->status === null)
                         <a href="{{ route('pinjam.status', $peminjaman->id) }}" class="badge badge-warning"
                             title="Terima Persetujuan">Menunggu Verifikasi</a>
@@ -34,11 +35,22 @@
                         <a href="{{ route('pinjam.status', $peminjaman->id) }}" class="badge badge-success"
                             title="Batalkan persetujuan">Disetujui</a>
                         @elseif($peminjaman->status === 2)
-                        <span class="badge badge-info"
-                            title="Batalkan persetujuan">Sudah Dipinjam</span>
+                        <span class="badge badge-info" title="Batalkan persetujuan">Sudah Dipinjam</span>
                         @else
                         <a href="{{ route('pinjam.status', $peminjaman->id) }}" class="badge badge-danger"
                             title="Terima persetujuan">Ditolak</a>
+                        @endif
+                        @else
+                        @if($peminjaman->status === null)
+                        <span class="badge badge-warning" title="Terima Persetujuan">Menunggu
+                            Verifikasi</span>
+                        @elseif($peminjaman->status === 1)
+                        <span class="badge badge-success" title="Batalkan persetujuan">Disetujui</span>
+                        @elseif($peminjaman->status === 2)
+                        <span class="badge badge-info" title="Batalkan persetujuan">Sudah Dipinjam</span>
+                        @else
+                        <span class="badge badge-danger" title="Terima persetujuan">Ditolak</span>
+                        @endif
                         @endif
                     </td>
                     <td>{{ $peminjaman->created_at->format('d F Y H:i') }}</td>

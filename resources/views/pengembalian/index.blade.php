@@ -17,7 +17,9 @@
                     <th>Penulis</th>
                     <th>Status</th>
                     <th>Tanggal Pinjam</th>
+                    @if(auth()->user()->role === 'admin')
                     <th>Action</th>
+                    @endif
                 </tr>
             </thead>
             <tbody>
@@ -35,11 +37,16 @@
                         @endif
                     </td>
                     <td>{{ $peminjaman->created_at->format('d F Y H:i') }}</td>
+
+                    @if(auth()->user()->role === 'admin')
+
                     @if($peminjaman->status === 1)
                     <td><a href="{{ route('pengembalian.kembali', $peminjaman->id) }}"
                             class="btn btn-sm btn-outline-danger">Kembalikan</a></td>
                     @else
                     <td></td>
+                    @endif
+
                     @endif
                 </tr>
                 @empty
@@ -51,4 +58,4 @@
         </table>
     </div>
 </div>
-@endsectionphp 
+@endsection

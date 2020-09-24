@@ -11,7 +11,11 @@ class PeminjamanController extends Controller
 {
     public function index()
     {
-        $data_peminjaman = Peminjaman::latest()->get();
+        if (auth()->user()->role === 'admin') {
+            $data_peminjaman = Peminjaman::latest()->get();
+        } else {
+            $data_peminjaman = Peminjaman::where('user_id', auth()->id())->get();
+        }
         return view('peminjaman.index', compact('data_peminjaman'));
     }
 
