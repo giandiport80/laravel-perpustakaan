@@ -37,7 +37,7 @@
                     <td>{{ $peminjaman->created_at->format('d F Y H:i') }}</td>
                     @if($peminjaman->status === 1)
                     <td><a href="{{ route('pengembalian.kembali', $peminjaman->id) }}"
-                            class="btn btn-sm btn-success">Kembalikan</a></td>
+                            class="btn btn-sm btn-outline-danger">Kembalikan</a></td>
                     @else
                     <td></td>
                     @endif
@@ -51,4 +51,4 @@
         </table>
     </div>
 </div>
-@endsection
+@endsectionphp 

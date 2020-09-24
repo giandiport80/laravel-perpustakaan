@@ -45,5 +45,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('pengembalian', 'PengembalianController@index')->name('pengembalian.index');
     Route::get('pengembalian-buku/{peminjaman}', 'PengembalianController@pengembalian')->name('pengembalian.kembali');
 
-
+    // k: anggota
+    Route::get('anggota', 'AnggotaController@index')->name('anggota.index');
+    Route::get('anggota/create', 'AnggotaController@create')->name('anggota.create');
+    Route::post('anggota', 'AnggotaController@store')->name('anggota.store');
+    Route::delete('anggota/{user}', 'AnggotaController@destroy')->name('anggota.destroy');
 });

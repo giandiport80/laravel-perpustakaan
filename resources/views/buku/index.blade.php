@@ -27,7 +27,7 @@
                 @forelse ($data_buku as $buku)
                 <tr>
                     <td class="text-center">{{ $loop->iteration }}.</td>
-                    <td><a href="{{ route('pinjam.store', $buku->id) }}" class="btn btn-primary btn-sm">Pinjam Buku</a></td>
+                    <td><a href="{{ route('pinjam.store', $buku->id) }}" class="btn btn-outline-primary btn-sm">Pinjam Buku</a></td>
                     <td>{{ $buku->kategori->nama }}</td>
                     <td>{{ $buku->judul }}</td>
                     <td>

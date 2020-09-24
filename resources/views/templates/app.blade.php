@@ -35,10 +35,10 @@
 
 
 <body class="sidebar-fixed sidebar-dark header-light header-fixed" id="body">
-    <script>
+    {{-- <script>
         NProgress.configure({ showSpinner: false });
       NProgress.start();
-    </script>
+    </script> --}}
 
     <div class="mobile-sticky-body-overlay"></div>
 
