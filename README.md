@@ -7,6 +7,33 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+
+## Membuat project aplikasi perpustakaan sederhana dengan laravel 7
+### Nama Project: laravel-perpustakaan
+
+### Instalasi Project : 
+1. Pastikan teman-teman sudah menginstall composer dan PHP versi 7 keatas (versi yang saya pakai adalah 7.4.8)
+2. jalankan perintah berikut untuk menginstall package-package yang diperlukan
+
+   ```
+   composer install
+   ```
+3. buat database baru dengan nama laravel_perpustakaan (disesuaikan) pada phpmyadmin atau aplikasi tableplus
+4. copy file .env.example, paste di tempat yg sama & ganti nama filenya jadi .env
+5. pada file .env, kemudian setting database, username & passwrod nya (disesuaikan)
+   ```
+   DB_DATABASE=laravel_perpustakaan
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
+6. untuk menjalankan aplikasi, jalankan perintah:
+   ```
+   php artisan serve
+   ```
+
+#### Note:
+   1. disesuaikan: setting konfigurasi bisa diubah sesuai dengan komputer lokal masing-masing
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
