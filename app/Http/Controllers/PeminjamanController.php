@@ -59,6 +59,11 @@ class PeminjamanController extends Controller
 
         return back();
     }
+
+    public function cek()
+    {
+        return request()->all();
+    }
 }
 
 

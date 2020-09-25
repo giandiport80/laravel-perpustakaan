@@ -66,11 +66,11 @@
                             @method('DELETE')
 
                             <a href="{{ route('buku.edit', $buku->id) }}" class="btn btn-success btn-sm"
-                                title="ubah kategori">
+                                title="ubah buku">
                                 <span class="mdi mdi-square-edit-outline"></span>
                             </a>
                             <button type="submit" onclick="return confirm('Yakin Hapus?')" class="btn btn-danger btn-sm"
-                                title="hapus kategori">
+                                title="hapus buku">
                                 <span class="mdi mdi-trash-can-outline"></span>
                             </button>
                         </form>

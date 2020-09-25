@@ -53,4 +53,5 @@ Route::group(['middleware' => ['auth']], function () {
 
     // k: laporan
     Route::get('print-pdf', 'LaporanController@printPdf')->name('print.pdf');
+    Route::post('cek', 'PeminjamanController@cek')->name('cek.index');
 });

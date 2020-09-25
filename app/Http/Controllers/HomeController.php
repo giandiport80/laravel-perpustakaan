@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Kategori;
+use App\Peminjaman;
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $anggota = User::where('role', 'user')->get();
+        $kategori = Kategori::all();
+        $peminjaman = Peminjaman::latest()->get();
+        $pengembalian = Peminjaman::whereIn('status', [1, 2])->latest()->get();
+        return view('home', compact('anggota', 'kategori', 'peminjaman', 'pengembalian'));
     }
 }
