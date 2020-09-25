@@ -4,12 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Peminjaman;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PengembalianController extends Controller
 {
     public function index()
     {
-        $data_peminjaman = Peminjaman::whereIn('status', [1, 2])->latest()->get();
+        if (Auth::user()->role === 'admin') {
+            $data_peminjaman = Peminjaman::latest()->get();
+        } else {
+            $data_peminjaman = Peminjaman::whereIn('status', [1, 2])->latest()->get();
+        }
         return view('pengembalian.index', compact('data_peminjaman'));
     }
 

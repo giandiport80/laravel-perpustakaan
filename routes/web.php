@@ -30,7 +30,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('kategori/{kategori:slug}', 'KategoriController@destroy')->name('kategori.destroy');
     Route::get('kategori/{kategori:slug}/edit', 'KategoriController@edit')->name('kategori.edit');
     Route::patch('kategori/{kategori:slug}', 'KategoriController@update')->name('kategori.update');
-    
+
     // k: buku
     Route::resource('buku', 'BukuController', ['except' => 'show']);
     Route::get('status/{buku}', 'BukuController@bukuStatus')->name('buku.status');
