@@ -34,7 +34,7 @@
 #### Note:
    1. disesuaikan: setting konfigurasi bisa diubah sesuai dengan komputer lokal masing-masing
 
-### - [Gian Nurwana](https://www.instagram.com/giannurwana19)
+### By : [Gian Nurwana](https://www.instagram.com/giannurwana19)
 
 ## About Laravel
 

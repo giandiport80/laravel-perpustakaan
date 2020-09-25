@@ -50,4 +50,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('anggota/create', 'AnggotaController@create')->name('anggota.create');
     Route::post('anggota', 'AnggotaController@store')->name('anggota.store');
     Route::delete('anggota/{user}', 'AnggotaController@destroy')->name('anggota.destroy');
+
+    // k: laporan
+    Route::get('print-pdf', 'LaporanController@printPdf')->name('print.pdf');
 });

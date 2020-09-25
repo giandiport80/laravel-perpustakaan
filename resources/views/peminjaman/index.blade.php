@@ -8,6 +8,7 @@
     </div>
     <div class="card-body">
         <x-alert />
+        <a href="{{ route('print.pdf') }}" class="btn btn-danger btn-sm mb-3">Print PDF</a>
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
